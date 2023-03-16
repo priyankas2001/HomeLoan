@@ -1,0 +1,7 @@
+is_global = true
+build_property.RootNamespace = HomeLoanAPI
+<<<<<<< HEAD
+build_property.ProjectDir = D:\dotnet_3192859_homeloan\Backend\HomeLoanBackend\HomeLoanAPI\
+=======
+build_property.ProjectDir = C:\Users\nandinigupta\Desktop\HomeLoan\dotnet_3192859_homeloan\Backend\HomeLoanBackend\HomeLoanAPI\
+>>>>>>> 5bab8c642ebbe91919d2183ee14e2e2243aaedf3

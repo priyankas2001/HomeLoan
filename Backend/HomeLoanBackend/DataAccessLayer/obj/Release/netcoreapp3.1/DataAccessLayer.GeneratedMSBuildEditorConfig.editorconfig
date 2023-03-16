@@ -1,0 +1,7 @@
+is_global = true
+build_property.RootNamespace = DataAccessLayer
+<<<<<<< HEAD
+build_property.ProjectDir = D:\dotnet_3192859_homeloan\Backend\HomeLoanBackend\DataAccessLayer\
+=======
+build_property.ProjectDir = C:\Users\nandinigupta\Desktop\HomeLoan\dotnet_3192859_homeloan\Backend\HomeLoanBackend\DataAccessLayer\
+>>>>>>> 5bab8c642ebbe91919d2183ee14e2e2243aaedf3
