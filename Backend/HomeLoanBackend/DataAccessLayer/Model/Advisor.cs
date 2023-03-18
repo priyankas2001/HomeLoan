@@ -5,16 +5,15 @@ using System.Text;
 
 namespace DataAccessLayer.Model
 {
-    internal class Advisor
+    public class Advisor
     {
         [Key]
-        [Required]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
-        public string EmailId = string.Empty;
+        public string EmailId { get; set; }
 
         [Required]
-        public string Password = string.Empty;
+        public string Password { get; set; }
     }
 }

@@ -1,27 +1,29 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DataAccessLayer.Model
 {
-    internal class User
+    public class User:IdentityUser
     {
         [Key]
         [Required]
-        public int Id { get; set; }
+        public override string Id { get; set; } = new Guid().ToString();
+        /*[Required]
+        public string EmailId { get; set; }
+        */
         [Required]
-        public string EmailId = string.Empty;
+        public string Password { get; set; }
         [Required]
-        public string Password = string.Empty;
+        public string MobileNumber { get; set; }
         [Required]
-        public string MobileNumber = string.Empty;
+        public string CityCode { get; set; }
         [Required]
-        public string CityCode = string.Empty;
+        public string StateCode { get; set; }
         [Required]
-        public string StateCode = string.Empty;
-        [Required]
-        public string CountryCode = string.Empty;
+        public string CountryCode { get; set; }
 
     }
 }

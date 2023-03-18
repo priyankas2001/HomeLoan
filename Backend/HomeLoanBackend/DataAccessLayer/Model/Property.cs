@@ -6,20 +6,21 @@ using System.Text;
 
 namespace DataAccessLayer.Model
 {
-    class Property
+    public class Property
     {
         [Required]
         [Key]
-        public int Id{get; set; }
+        public Guid Id{get; set; }
 
         [Required]
-        public string Address = string.Empty;
+        public string Address { get; set; }
         [Required]
-        public decimal Size = 0.00M;
+        public double Size { get; set; }
         [Required]
-        public decimal Cost = 0.00M;
+        public double Cost { get; set; }
+
         [Required]
-        public decimal RegistrationCost = 0.00M;
+        public decimal RegistrationCost { get; set; }
 
     }
 }

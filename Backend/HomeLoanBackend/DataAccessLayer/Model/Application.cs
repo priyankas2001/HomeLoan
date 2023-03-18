@@ -6,11 +6,11 @@ using System.Text;
 
 namespace DataAccessLayer.Model
 {
-    internal class Application
+    public class Application
     {
         [Key]
         [Required]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [ForeignKey (nameof(UserId))]
         [Required]
         public int UserId { get; set; }
