@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repository.RepositoryImplementation
 {
-    public class AccountRepository
+    public class AccountRepository : IAccountRepository
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly UserManager<User> _userManager;
@@ -21,9 +21,9 @@ namespace DataAccessLayer.Repository.RepositoryImplementation
             _userManager = userManager;
         }
 
-        public async Task CreateRoleAsync(IServiceProvider _serviceProvider)
+     /*   public async Task CreateRoleAsync(IServiceProvider _serviceProvider)
         {
-            var roles = new string[] { "User", "Advisor" };
+            var roles = new string[] { "Customer", "Advisor" };
 
             var roleManager = _serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
@@ -36,42 +36,34 @@ namespace DataAccessLayer.Repository.RepositoryImplementation
                 }
             }
 
-        }
+        }*/
 
-        public async Task<dynamic> createUserAsync(User userModel)
+        public async Task<dynamic> CreateUserAsync(User userModel)
         {
 
             var userManager = _serviceProvider.GetRequiredService<UserManager<User>>();
             var email = userManager.Users.Where(x => x.Email == userModel.Email).FirstOrDefault();
             if (email == null)
             {
-                return ("user not found");
 
-            }
-            else
-            {
                 var user = new User()
                 {
                     Email = userModel.Email,
+                    UserName = userModel.Email.Substring(0, userModel.Email.IndexOf("@")),
                     MobileNumber = userModel.MobileNumber,
                     StateCode = userModel.StateCode,
                     CityCode = userModel.CityCode,
                     CountryCode = userModel.CountryCode,
-
-
                 };
 
                 var res = await _userManager.CreateAsync(user, userModel.Password);
+                await _userManager.AddToRoleAsync(user, "Customer");
                 return res;
             }
+            else
+            {
+                return ("user already Exists");
+            }
         }
-
-        User user1 = new User
-        {
-
-        };
-        createUserAsync(user1);
-
-
     }
 }

@@ -1,11 +1,14 @@
 using DataAccessLayer.Data;
 using DataAccessLayer.Model;
+using DataAccessLayer.Repository.RepositoryImplementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.Threading.Tasks;
 
 namespace HomeLoanAPI
 {
@@ -24,10 +27,27 @@ namespace HomeLoanAPI
             services.AddControllers();
             services.AddDbContext<AppDbContext>();
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddScoped<IAccountRepository, AccountRepository>();
+        }
+        public async Task CreateRolesAsync(IServiceProvider _serviceProvider)
+        {
+            var roles = new string[] { "Customer", "Advisor" };
+
+            var roleManager = _serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+            foreach (var role in roles)
+            {
+                if (!await roleManager.RoleExistsAsync(role))
+                {
+                    await roleManager.CreateAsync(new IdentityRole { Name = role });
+
+                }
+            }
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
@@ -44,6 +64,8 @@ namespace HomeLoanAPI
             {
                 endpoints.MapControllers();
             });
+            CreateRolesAsync(serviceProvider).GetAwaiter().GetResult();
         }
+       
     }
 }

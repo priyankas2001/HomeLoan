@@ -8,9 +8,8 @@ namespace DataAccessLayer.Model
 {
     public class User:IdentityUser
     {
-        [Key]
-        [Required]
-        public override string Id { get; set; } = new Guid().ToString();
+        /*[Key]
+        public override string Id { get; set; } = Guid.NewGuid().ToString();*/
         /*[Required]
         public string EmailId { get; set; }
         */
