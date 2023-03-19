@@ -19,6 +19,7 @@ namespace DataAccessLayer.Repository.RepositoryImplementation
         {
             _serviceProvider = serviceProvider;
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
      /*   public async Task CreateRoleAsync(IServiceProvider _serviceProvider)
@@ -38,14 +39,21 @@ namespace DataAccessLayer.Repository.RepositoryImplementation
 
         }*/
 
-        public async Task<dynamic> CreateUserAsync(User userModel)
+        public async Task<IdentityResult> CreateUserAsync(User userModel)
         {
 
             var userManager = _serviceProvider.GetRequiredService<UserManager<User>>();
             var email = userManager.Users.Where(x => x.Email == userModel.Email).FirstOrDefault();
-            if (email == null)
+            if (email != null)
             {
 
+                return IdentityResult.Failed(new IdentityError {
+                    Code="Signup Failed",
+                    Description="User already Exists"
+                });
+            }
+            else
+            {
                 var user = new User()
                 {
                     Email = userModel.Email,
@@ -60,10 +68,18 @@ namespace DataAccessLayer.Repository.RepositoryImplementation
                 await _userManager.AddToRoleAsync(user, "Customer");
                 return res;
             }
-            else
-            {
-                return ("user already Exists");
-            }
+        }
+
+        public async Task<SignInResult> PasswordSignInAsync(SignInModel signInModel)
+        {
+           return await _signInManager.PasswordSignInAsync(signInModel.UserName,signInModel.Password,true,false);
+           
+            
+        }
+        
+        public async Task SignOut()
+        {
+            await _signInManager.SignOutAsync();
         }
     }
 }
