@@ -22,23 +22,6 @@ namespace DataAccessLayer.Repository.RepositoryImplementation
             _signInManager = signInManager;
         }
 
-     /*   public async Task CreateRoleAsync(IServiceProvider _serviceProvider)
-        {
-            var roles = new string[] { "Customer", "Advisor" };
-
-            var roleManager = _serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-
-            foreach (var role in roles)
-            {
-                if (!await roleManager.RoleExistsAsync(role))
-                {
-                    await roleManager.CreateAsync(new IdentityRole { Name = role });
-
-                }
-            }
-
-        }*/
-
         public async Task<IdentityResult> CreateUserAsync(User userModel)
         {
 
@@ -73,13 +56,13 @@ namespace DataAccessLayer.Repository.RepositoryImplementation
         public async Task<SignInResult> PasswordSignInAsync(SignInModel signInModel)
         {
            return await _signInManager.PasswordSignInAsync(signInModel.UserName,signInModel.Password,true,false);
-           
-            
         }
         
         public async Task SignOut()
         {
             await _signInManager.SignOutAsync();
         }
+
+       
     }
 }

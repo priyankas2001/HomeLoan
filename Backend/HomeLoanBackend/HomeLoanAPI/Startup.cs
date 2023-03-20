@@ -28,6 +28,7 @@ namespace HomeLoanAPI
             services.AddDbContext<AppDbContext>();
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.AddScoped<IAccountRepository, AccountRepository>();
+            services.AddScoped<ICalculator, Calculator>();
         }
         public async Task CreateRolesAsync(IServiceProvider _serviceProvider)
         {

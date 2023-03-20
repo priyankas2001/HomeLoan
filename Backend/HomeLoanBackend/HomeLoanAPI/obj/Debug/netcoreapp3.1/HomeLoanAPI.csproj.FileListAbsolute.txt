@@ -237,3 +237,8 @@ D:\HomeLoan\Backend\HomeLoanBackend\HomeLoanAPI\obj\Debug\netcoreapp3.1\HomeLoan
 D:\HomeLoan\Backend\HomeLoanBackend\HomeLoanAPI\obj\Debug\netcoreapp3.1\HomeLoanAPI.dll
 D:\HomeLoan\Backend\HomeLoanBackend\HomeLoanAPI\obj\Debug\netcoreapp3.1\HomeLoanAPI.pdb
 D:\HomeLoan\Backend\HomeLoanBackend\HomeLoanAPI\obj\Debug\netcoreapp3.1\HomeLoanAPI.genruntimeconfig.cache
+D:\HomeLoan\Backend\HomeLoanBackend\HomeLoanAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\HomeLoan\Backend\HomeLoanBackend\HomeLoanAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\HomeLoan\Backend\HomeLoanBackend\HomeLoanAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\HomeLoan\Backend\HomeLoanBackend\HomeLoanAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\HomeLoan\Backend\HomeLoanBackend\HomeLoanAPI\obj\Debug\netcoreapp3.1\HomeLoanAPI.MvcApplicationPartsAssemblyInfo.cs

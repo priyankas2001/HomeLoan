@@ -14,7 +14,9 @@ namespace DataAccessLayer.Model
         public double LoanAmount { get; set; }
 
         [Required]
-        public int LoanDuration { get; set; }
+
+        [Range(1, int.MaxValue, ErrorMessage = "Please enter a value bigger than {1}")]
+        public int LoanDurationInMonths { get; set; }
 
         [Required]
         public DateTime LoanStartDate { get; set; }
