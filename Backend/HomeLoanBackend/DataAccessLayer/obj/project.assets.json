@@ -5885,23 +5885,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\": {},
+    "C:\\Users\\priyankasalal\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HomeLoan\\Backend\\HomeLoanBackend\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\priyankasalal\\Desktop\\HomeLoan\\Backend\\HomeLoanBackend\\DataAccessLayer\\DataAccessLayer.csproj",
       "projectName": "DataAccessLayer",
-      "projectPath": "D:\\HomeLoan\\Backend\\HomeLoanBackend\\DataAccessLayer\\DataAccessLayer.csproj",
-      "packagesPath": "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\",
-      "outputPath": "D:\\HomeLoan\\Backend\\HomeLoanBackend\\DataAccessLayer\\obj\\",
+      "projectPath": "C:\\Users\\priyankasalal\\Desktop\\HomeLoan\\Backend\\HomeLoanBackend\\DataAccessLayer\\DataAccessLayer.csproj",
+      "packagesPath": "C:\\Users\\priyankasalal\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\priyankasalal\\Desktop\\HomeLoan\\Backend\\HomeLoanBackend\\DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\bhupendarbhandari\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\priyankasalal\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

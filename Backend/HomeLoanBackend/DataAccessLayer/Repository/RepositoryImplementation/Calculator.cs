@@ -23,7 +23,5 @@ namespace DataAccessLayer.Repository.RepositoryImplementation
             };
             return list;
         }
-
-        public 
     }
 }
